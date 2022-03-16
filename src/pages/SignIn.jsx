@@ -1,6 +1,6 @@
 const SignIn = () => {
   return (
-    <div>SignIn</div>
+    <h1>SignIn</h1>
   )
 }
 

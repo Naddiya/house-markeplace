@@ -1,6 +1,6 @@
 const Offers = () => {
   return (
-    <div>Offers</div>
+    <h1>Offers</h1>
   )
 }
 
