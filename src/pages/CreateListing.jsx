@@ -13,7 +13,7 @@ import { toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 
 import Spinner from '../components/Spinner';
-const apiKey = process.env.REACT_APP_NOT_SECRET_CODE;
+const apiKey = process.env.REACT_APP_GEOCODE_TOKEN;
 
 const CreateListing = () => {
     // eslint-disable-next-line
