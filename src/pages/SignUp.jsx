@@ -42,9 +42,7 @@ const SignUp = () => {
                 displayName: name,
             });
 
-            const formDataCopy = {
-                ...formData
-            };
+            const formDataCopy = {...formData};
             delete formDataCopy.password;
             formDataCopy.timeStamp = serverTimestamp();
 
@@ -65,14 +63,15 @@ const SignUp = () => {
 
                 <form onSubmit={onSubmit}>
                     <input
-                        type='name'
+                        type='text'
                         className='nameInput'
                         id='name'
-                        placeholder='name'
+                        placeholder='Name'
                         value={name}
                         onChange={onChange}
-                        autoComplete='use-name'
+                        autoComplete='username'
                     />
+
                     <input
                         type='email'
                         className='emailInput'
@@ -82,6 +81,7 @@ const SignUp = () => {
                         onChange={onChange}
                         autoComplete='use-email'
                     />
+
                     <div className="passwordInputDiv">
                         <input type={showPassword ? 'text' : 'password'}
                             className="passwordInput"
@@ -89,8 +89,9 @@ const SignUp = () => {
                             placeholder='Password'
                             value={password}
                             onChange={onChange}
-                            autoComplete='user-password'
+                            autoComplete='userPassword'
                         />
+
                         <img
                             className="showPassword"
                             src={visibilityIcon}
@@ -98,6 +99,10 @@ const SignUp = () => {
                             onClick={() => setShowPassword((prevState) => !prevState)}
                         />
                     </div>
+
+                    <Link to='/forgot-password' className='forgotPasswordLink'>
+                        Forgot Password
+                    </Link>
 
                     <div className="signUpBar">
                         <p className="signUpText">
@@ -112,7 +117,7 @@ const SignUp = () => {
                 <OAuth />
 
                 <Link to='/sign-in' className='registerLink'>
-                    Sign Up Instead
+                    Sign In Instead
                 </Link>
             </div>
         </>
