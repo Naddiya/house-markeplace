@@ -6,6 +6,8 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import Spinner from './Spinner';
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 
 const Slider = () => {
   const [loading, setLoading] = useState(true);
@@ -38,6 +40,10 @@ const Slider = () => {
 
   if (loading) {
     return <Spinner />;
+  }
+
+  if (listings.length === 0) {
+    return <></>;
   }
 
   return listings && (
