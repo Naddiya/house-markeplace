@@ -16,6 +16,7 @@ import Spinner from '../components/Spinner';
 const apiKey = process.env.REACT_APP_NOT_SECRET_CODE;
 
 const CreateListing = () => {
+    // eslint-disable-next-line
     const [geolocationEnabled, setGeolocationEnabled] = useState(true);
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -134,6 +135,8 @@ const CreateListing = () => {
                             case 'running':
                                 console.log('Upload is running');
                                 break;
+                            default:
+                                break;
                         }
                     },
                     (error) => {
@@ -164,7 +167,7 @@ const CreateListing = () => {
             timestamp: serverTimestamp()
         };
 
-        formDataCopy.location = address
+        formDataCopy.location = address;
         delete formDataCopy.images;
         delete formDataCopy.address;
         !formDataCopy.offer && delete formDataCopy.discountedPrice;

@@ -51,7 +51,7 @@ const Category = () => {
             }
         };
         fetchListings();
-    }, [params]);
+    }, [params, listings]);
 
     return (
         <div className="category">

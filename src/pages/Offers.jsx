@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import {
   collection,
   getDocs,
@@ -17,8 +16,6 @@ import ListingItem from '../components/ListingItem';
 const Offers = () => {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const params = useParams();
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -51,7 +48,8 @@ const Offers = () => {
       }
     };
     fetchListings();
-  }, [params]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="category">
